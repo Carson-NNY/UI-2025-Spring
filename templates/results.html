@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  {% if query %}
+    <h3>Showing results for "{{ query }}":</h3>
+  {% endif %}
+
+  {% if results|length == 0 and query %}
+    <p>No results found.</p>
+  {% elif results|length == 0 and not query %}
+    <p>No results found.</p>
+  {% else %}
+    <ul>
+    {% for item in results %}
+      <li>
+        <a href="{{ url_for('view_item', item_id=item.id) }}">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}

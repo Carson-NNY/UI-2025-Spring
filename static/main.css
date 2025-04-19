@@ -1,0 +1,21 @@
+/* Navbar Styling */
+.navbar {
+  background-color: #343a40 !important; /* Override Bootstrap defaults */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Ensure search bar is pushed to the right */
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    justify-content: flex-start; /* Align items properly in mobile mode */
+  }
+}
