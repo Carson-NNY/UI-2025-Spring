@@ -25,51 +25,41 @@
       href="{{ url_for('static', filename='main.css') }}"
     />
 
-    <title>???</title>
+    <title>Rule of Thirds Photography Tutorial</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <!-- Website Title / Home Link -->
-        <a class="navbar-brand" href="{{ url_for('home') }}">
-          Investment Books DB
+    <nav style="background-color: #1d3557; padding: 1rem">
+      <div style="display: flex; justify-content: space-evenly; gap: 1rem">
+        <a
+          href="{{ url_for('home') }}"
+          class="nav_item{% if request.endpoint=='home' %} active{% endif %}"
+        >
+          HOME
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+        <a
+          href="{{ url_for('introduction') }}"
+          class="nav_item{% if request.endpoint=='introduction' %} active{% endif %}"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Ensure collapse container is pushed to the right -->
-        <div
-          class="collapse navbar-collapse ms-auto"
-          id="navbarSupportedContent"
+          INTRODUCTION
+        </a>
+        <a
+          href="{{ url_for('preparation') }}"
+          class="nav_item{% if request.endpoint=='preparation' %} active{% endif %}"
         >
-          <form
-            class="d-flex"
-            id="searchForm"
-            action="{{ url_for('search') }}"
-            method="get"
-          >
-            <input
-              class="form-control me-2"
-              type="search"
-              id="searchInput"
-              placeholder="Search"
-              aria-label="Search"
-              name="q"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
+          PREPARATION
+        </a>
+        <a
+          href="{{ url_for('examples') }}"
+          class="nav_item{% if request.endpoint=='examples' %} active{% endif %}"
+        >
+          EXAMPLES
+        </a>
+        <a
+          href="{{ url_for('quiz') }}"
+          class="nav_item{% if request.endpoint=='quiz' %} active{% endif %}"
+        >
+          QUIZ
+        </a>
       </div>
     </nav>
 

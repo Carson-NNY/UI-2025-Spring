@@ -1,21 +1,154 @@
 /* Navbar Styling */
-.navbar {
-  background-color: #343a40 !important; /* Override Bootstrap defaults */
+.nav_item {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: all 0.2s ease;
 }
 
-.navbar-brand {
-  font-weight: bold;
+.nav_item.active {
+  font-weight: 700; /* bold for the current page */
+}
+
+.nav_item:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(217, 244, 100, 0.2);
+  color: #fff !important;
+  transform: translateY(-2px);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Full-page background gradient */
+body {
+  background: linear-gradient(to bottom, #1d3557, #4a2b7b);
+  color: white;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+/* Main content styles */
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+}
+
+/* Hero section for home page */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 12rem;
+}
+
+/* Button styles */
+.btn-action {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 1rem 3rem;
   font-size: 1.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
-/* Ensure search bar is pushed to the right */
-.navbar-collapse {
-  justify-content: flex-end;
+.btn-action:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-action-home:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* Next button */
+.btn-next {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  margin-top: 2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  max-width: 400px;
+}
+
+.btn-next:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+}
+
+/* Content layout */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-text {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.content-with-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.image-example {
+  max-width: 100%;
+  border: 3px solid white;
+}
+
+/* Grid example */
+.grid-example {
+  max-width: 400px;
+  margin: 2rem 0;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 991px) {
   .navbar-collapse {
     justify-content: flex-start; /* Align items properly in mobile mode */
+  }
+
+  .content-with-image {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .content-text {
+    font-size: 1.2rem;
   }
 }

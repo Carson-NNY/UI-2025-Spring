@@ -16,7 +16,7 @@ data = {
         "summary": (
             "Considered the bible of investing, 'The Intelligent Investor' by Benjamin Graham "
             "introduces the concept of value investing. It emphasizes the importance of fundamental "
-            "analysis, investor psychology, and long-term discipline over speculation. Graham’s "
+            "analysis, investor psychology, and long-term discipline over speculation. Graham's "
             "approach has influenced many successful investors, including Warren Buffett. "
             "It remains a must-read for those seeking to understand the stock market's ups and downs."
         ),
@@ -57,7 +57,7 @@ data = {
             "Philip A. Fisher introduces the concept of investing in high-quality growth companies "
             "for extended periods. He outlines a 15-point checklist for evaluating a company's long-term "
             "prospects. The book emphasizes qualitative factors like management quality and product "
-            "potential. Fisher’s insights have significantly influenced modern growth investing strategies."
+            "potential. Fisher's insights have significantly influenced modern growth investing strategies."
         ),
         "author": ["Philip A. Fisher"],
         "rating": 8.8,
@@ -96,7 +96,7 @@ data = {
             "John C. Bogle, the founder of Vanguard, advocates for low-cost index investing as the "
             "simplest and most effective strategy. He provides evidence that high-fee mutual funds "
             "often underperform their benchmarks over time. The book encourages a disciplined, "
-            "long-term approach to building wealth. Bogle’s philosophy has shaped the modern investing "
+            "long-term approach to building wealth. Bogle's philosophy has shaped the modern investing "
             "landscape with a focus on cost efficiency."
         ),
         "author": ["John C. Bogle"],
@@ -212,51 +212,43 @@ data = {
 # 2) ROUTES
 # -------------------------------------------------
 
-# Student: Guanhong Liu 
-
-@app.route("/api/popular")
-def get_popular():
-    """
-    API endpoint to return the first 3 books dynamically.
-    """
-    popular_items = list(data.values())[:3]  # Pick first 3 items dynamically
-    return jsonify(popular_items)
-
 @app.route("/")
 def home():
-    """
-    The homepage. Will display 3 'popular' items via scripts.js.
-    """
+    """Render homepage (home.html)."""
     return render_template("home.html")
 
-@app.route("/search")
-def search():
-    """
-    The search route. Searches the 'title' field of each item.
-    """
-    query = request.args.get("q", "")
-    trimmed_query = query.strip()
 
-    # Otherwise, do a case-insensitive substring match on title
-    results = []
-    for item_id, item_data in data.items():
-        if trimmed_query.lower() in item_data["title"].lower():
-            results.append(item_data)
+@app.route("/introduction")
+def introduction():
+    """Render the Introduction page."""
+    return render_template("introduction.html")
 
-    return render_template("results.html", query=trimmed_query, results=results)
 
-@app.route("/view/<item_id>")
-def view_item(item_id):
-    """
-    Show details of a single item by ID.
-    """
-    item = data.get(item_id)
-    if not item:
-        return "Item not found!", 404
-    return render_template("view.html", item=item)
+@app.route("/introduction/part2")
+def introduction_part2():
+    """Render the second part of the Introduction page."""
+    return render_template("introduction_part2.html")
 
+
+@app.route("/preparation")
+def preparation():
+    """Render the Preparation page."""
+    return render_template("preparation.html")
+
+@app.route("/examples")
+def examples():
+    """Render the Examples page."""
+    return render_template("examples.html")
+
+@app.route("/quiz")
+def quiz():
+    """Render the Quiz page."""
+    return render_template("quiz.html")
+
+# -------------------------------------------------
+# Launch
+# -------------------------------------------------
 if __name__ == "__main__":
     app.run(debug=True)
-
 
 
