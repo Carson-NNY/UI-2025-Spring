@@ -1,31 +1,24 @@
 {% extends "layout.html" %} {% block body %}
 <div class="content-section">
   <div class="content-with-image">
-    <div>
-      <p class="content-text">
-        The rule of thirds is one of the most well-known compositional
-        techniques in photography. It involves dividing an image into thirds,
-        both horizontally and vertically, to create a grid of nine equal parts.
-      </p>
-
-      <p class="content-text">
-        It requires the photographer to place the main subject or focal point of
-        the photo along these lines or their intersections - helping to create
-        more balanced and eye-catching compositions.
-      </p>
+    <!-- left column: content paragraphs -->
+    <div class="text-col">
+      {% for section in page_data.sections %}
+      <p class="content-text">{{ section.content }}</p>
+      {% endfor %}
     </div>
 
-    <div>
+    <!-- right column: image + Next button -->
+    <div class="media-col">
       <img
-        src="https://cdn.pixabay.com/photo/2015/03/17/14/05/sparkler-677774_960_720.jpg"
-        alt="Photo with rule of thirds grid overlay"
-        class="image-example grid-example"
+        src="{{ url_for('static', filename=page_data.image.src) }}"
+        alt="{{ page_data.image.alt }}"
+        class="{{ page_data.image.class }}"
       />
+      <a href="{{ url_for(page_data.next_button.link) }}" class="btn-next">
+        {{ page_data.next_button.text }}
+      </a>
     </div>
   </div>
-
-  <a href="{{ url_for('preparation') }}" class="btn-next"
-    >NEXT: How to make grid lines</a
-  >
 </div>
 {% endblock %}

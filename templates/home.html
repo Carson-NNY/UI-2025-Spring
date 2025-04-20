@@ -1,8 +1,11 @@
 {% extends "layout.html" %} {% block body %}
 <div class="hero-section">
-  <h1 class="hero-title">Master the Rule of Thirds in 10 Minutes!</h1>
-  <a href="{{ url_for('introduction') }}" class="btn-action btn-action-home"
-    >Start Lesson</a
+  <h1 class="hero-title">{{ page_data.title }}</h1>
+  <a
+    href="{{ url_for(page_data.button_link) }}"
+    class="btn-action btn-action-home"
   >
+    {{ page_data.button_text }}
+  </a>
 </div>
 {% endblock %}

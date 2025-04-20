@@ -1,15 +1,44 @@
 {% extends "layout.html" %} {% block body %}
-<div class="content-section">
-  <h1>How to Enable Grid Lines</h1>
-  <p class="content-text">
-    Most modern cameras and smartphones have built-in grid line options that
-    make it easy to apply the rule of thirds while shooting. Let's learn how to
-    enable them on different devices.
-  </p>
+<div class="content-section prep-section">
+  <div class="prep-content">
+    <!-- left column: steps -->
+    <div class="prep-text-col">
+      {% for step in page_data.steps %}
+      <p class="content-text-preparation">{{ step.title }}</p>
+      <p class="content-text-preparation">
+        {% if "thirds" in step.content %} Mentally divide your image into
+        <strong>thirds</strong>, both horizontally and vertically, and place
+        your subject accordingly. {% else %} {{ step.content }} {% endif %}
+      </p>
+      {% endfor %}
 
-  <!-- This is just a placeholder for the next steps in the tutorial -->
-  <p class="content-text">
-    Content for this section will be developed in future updates.
-  </p>
+      <!-- next button -->
+      <div class="text-center">
+        <a
+          href="{{ url_for(page_data.next_button.link) }}"
+          class="btn-next btn-next-preparation"
+        >
+          {{ page_data.next_button.text }}
+        </a>
+      </div>
+    </div>
+
+    <!-- right column: videos -->
+    <div class="prep-video-col">
+      {% for video in page_data.videos %}
+      <div class="prep-video-item">
+        <div class="prep-video-wrapper">
+          <iframe
+            src="{{ video.src }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="prep-video-caption">{{ video.caption }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 {% endblock %}
