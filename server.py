@@ -157,6 +157,31 @@ def quiz():
     """Render the Quiz page."""
     return render_template("quiz.html", page_data=tutorial_data["quiz"])
 
+@app.route("/quiz2")
+def quiz2():
+    """Render the second Quiz page."""
+    return render_template("quiz2.html")
+
+@app.route("/quiz3")
+def quiz3():
+    """Render the third Quiz page."""
+    return render_template("quiz3.html")
+
+@app.route("/quiz4")
+def quiz4():
+    """Render the fourth Quiz page."""
+    return render_template("quiz4.html")
+
+@app.route("/quiz5")
+def quiz5():
+    """Render the fifth Quiz page."""
+    return render_template("quiz5.html")
+
+@app.route("/quiz/result")
+def quiz_result():
+    """Render the Quiz Result page."""
+    return render_template("quiz_result.html")
+
 # -------------------------------------------------
 # Launch
 # -------------------------------------------------
