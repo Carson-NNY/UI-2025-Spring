@@ -1,5 +1,59 @@
-{% extends "layout.html" %} {% block body %}
-<div class="content-section">
-  <h1>...</h1>
+{# templates/examples.html #} {% extends "layout.html" %} {% block body %}
+<div class="container content-section">
+  <div class="examples-hero">
+    <div class="hero-text">
+      <p>
+        The rule of thirds gets easier once you understand it well. The more you
+        practice it, the more you’ll find how it’s a superb help for you to
+        capture better outcomes.
+      </p>
+      <p>
+        Here are Four essential guidelines that you should bear in mind, tactics
+        that will improve the aesthetic of your photos
+      </p>
+    </div>
+    <div class="hero-arrow">
+      <a href="{{ url_for('quiz') }}" class="btn-action arrow-shaped">
+        Ready for a pop quiz?
+      </a>
+    </div>
+  </div>
+
+  <div class="examples-grid">
+    <a href="{{ url_for('example1') }}" class="example-item">
+      <img
+        src="{{ url_for('static', filename='images/example1.jpg') }}"
+        class="image-example grid-example"
+        alt=""
+      />
+      <p class="example-caption">
+        Align the Subject With Lines or Intersections
+      </p>
+    </a>
+    <a href="{{ url_for('example2') }}" class="example-item">
+      <img
+        src="{{ url_for('static', filename='images/example2.jpg') }}"
+        class="image-example grid-example"
+        alt=""
+      />
+      <p class="example-caption">Align the Linear Elements With Grid Lines</p>
+    </a>
+    <a href="{{ url_for('example3') }}" class="example-item">
+      <img
+        src="{{ url_for('static', filename='images/example3.jpg') }}"
+        class="image-example grid-example"
+        alt=""
+      />
+      <p class="example-caption">Align Objects Diagonally</p>
+    </a>
+    <a href="{{ url_for('example4') }}" class="example-item">
+      <img
+        src="{{ url_for('static', filename='images/example4.jpg') }}"
+        class="image-example grid-example"
+        alt=""
+      />
+      <p class="example-caption">Break the Rule of Thirds</p>
+    </a>
+  </div>
 </div>
 {% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block body %}
+<div class="container content-section example2-page">
+  <h3 class="text-center" style="margin-bottom: 2rem">
+    Align the Linear Elements With Grid Lines
+  </h3>
+
+  <div class="content-with-image">
+    <div class="media-col">
+      <img
+        src="{{ url_for('static', filename='images/example2.jpg') }}"
+        class="image-example grid-example"
+        alt="Example 2 grid overlay"
+      />
+    </div>
+    <div class="media-col">
+      <img
+        src="{{ url_for('static', filename='images/example2.2.jpg') }}"
+        class="image-example grid-example"
+        alt="Example 2 horizon alignment"
+      />
+    </div>
+  </div>
+
+  <p class="content-text" style="margin-top: 2rem; font-style: italic">
+    Instead of placing the horizon line at the center, align it with the lower
+    grid line— this brings more focus to the sky.
+  </p>
+
+  <div style="text-align: right; margin-top: 3rem">
+    <a href="{{ url_for('examples') }}" class="btn-next">BACK</a>
+  </div>
+</div>
+{% endblock %}

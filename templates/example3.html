@@ -1,0 +1,36 @@
+{% extends "layout.html" %} {% block body %}
+<div class="container content-section example3-page">
+  <h3 class="text-center" style="margin-bottom: 2rem">
+    Align Objects Diagonally
+  </h3>
+
+  <div class="content-with-image">
+    <!-- two images stacked -->
+    <div class="media-col" style="gap: 1rem">
+      <img
+        src="{{ url_for('static', filename='images/example3.jpg') }}"
+        class="image-example grid-example"
+        alt="Example 3 diagonal grid"
+      />
+      <img
+        src="{{ url_for('static', filename='images/example3.2.jpg') }}"
+        class="image-example grid-example"
+        alt="Example 3 diagonal alignment"
+      />
+    </div>
+
+    <!-- explanatory text -->
+    <div class="media-col">
+      <p class="content-text" style="font-style: italic">
+        Consider aligning subjects diagonally, instead of horizontally or
+        vertically— for example, this winding river makes for a more dynamic
+        composition when it diagonally splits the image.
+      </p>
+    </div>
+  </div>
+
+  <div style="text-align: right; margin-top: 3rem">
+    <a href="{{ url_for('examples') }}" class="btn-next">BACK</a>
+  </div>
+</div>
+{% endblock %}

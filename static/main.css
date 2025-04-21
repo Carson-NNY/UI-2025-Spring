@@ -252,3 +252,208 @@ h1 {
     font-size: 1.2rem;
   }
 }
+
+/* ── Examples page hero layout ── */
+.examples-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.hero-text {
+  flex: 1;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+.hero-arrow {
+  flex-shrink: 0;
+}
+
+/* CSS arrow button */
+.arrow-link {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid white;
+  color: #00ced1;
+  text-decoration: none;
+  font-weight: bold;
+}
+.arrow-link:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  transform: translateY(-50%);
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-left: 1rem solid rgba(0, 0, 0, 0.6);
+  border-left-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Grid of four examples */
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.example-item {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+.example-item img {
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.example-caption {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* ── Examples page adjustments ── */
+
+/* 1) shrink the left‑text column */
+.examples-hero .hero-text {
+  max-width: 55%; /* was flex:1; now caps out at ~55% of the row */
+}
+
+/* 2) restyle hero‑arrow to center its button */
+.examples-hero .hero-arrow {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* remove any old arrow‑pseudo rules */
+.arrow-link,
+.arrow-link:after {
+  display: none;
+}
+
+/* ── Arrow‑shaped “pop quiz” button ── */
+.btn-action.arrow-shaped {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2.5rem; /* left+right padding (tip comes from ::after) */
+  color: white; /* force white text */
+  text-decoration: none; /* kill the blue underline */
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  overflow: visible; /* so the ::after tip can peek out */
+}
+
+/* the little triangle on the right */
+.btn-action.arrow-shaped::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -12px; /* half of the triangle’s height */
+  transform: translateY(-50%);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid white;
+}
+
+/* hover state – re‑use your existing .btn-action hover plus keep the triangle */
+.btn-action.arrow-shaped:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  color: white; /* reinforce white text on hover */
+  text-decoration: none; /* no underline on hover */
+}
+
+/* ── Proportional, larger examples grid ── */
+.examples-grid {
+  display: grid;
+  /* enforce a larger minimum width per cell: */
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* use native aspect‑ratio instead of fixed height */
+.examples-grid .example-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* or , whichever you prefer */
+  object-fit: cover;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+/* caption style (optional tweak) */
+.example-caption {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* ── Layout tweaks for example1 ── */
+.example-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+/* both columns take equal space */
+.example-left,
+.example-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* push the caption to the bottom of the left column */
+.example-left {
+  justify-content: space-between;
+}
+
+.example-left img {
+  margin-top: 85px; /* shift it down by 20px; adjust as you like */
+}
+
+/* ensure the description sits under the image */
+.example-desc {
+  margin-top: 1rem;
+  margin-bottom: 140px;
+  font-style: italic;
+}
+
+/* keep the title pinned to the top of the right column */
+.example-title {
+  margin-bottom: 1rem;
+  text-align: left; /* you can also center if you prefer */
+}
+
+/* push the BACK button to the bottom of the right column */
+.example-back {
+  margin-top: auto;
+  align-self: flex-end; /* right‑align the button */
+  margin-right: -100px;
+}
+
+/* ── example2: make both images larger ── */
+.example2-page .content-with-image {
+  gap: rem; /* give a bit more breathing room between them */
+}
+
+.example2-page .content-with-image .media-col {
+  flex: 1; /* equal widths */
+  max-width: 2000px; /* cap each column at 600px */
+}
+
+.example2-page .content-with-image .media-col img {
+  width: 100%;
+  height: auto; /* keep natural aspect ratio */
+  object-fit: cover;
+}
+
+/* ── example4: shrink only the first image ── */
+.example4-page .content-with-image .media-col img:first-child {
+  height: 300px; /* whatever smaller height you want */
+  object-fit: cover; /* crop/scale so it still fills the box */
+  width: 100%; /* maintain full width of its column */
+}

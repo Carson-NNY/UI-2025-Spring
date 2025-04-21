@@ -12,7 +12,7 @@ tutorial_data = {
         "title": "Master the Rule of Thirds in 10 Minutes!",
         "button_text": "Start Lesson",
         "button_link": "introduction"
-    },
+    }, 
     "introduction": {
         "sections": [
             {
@@ -124,10 +124,33 @@ def preparation():
     """Render the Preparation page."""
     return render_template("preparation.html", page_data=tutorial_data["preparation"])
 
+
 @app.route("/examples")
 def examples():
     """Render the Examples page."""
-    return render_template("examples.html", page_data=tutorial_data["examples"])
+    return render_template("examples.html",
+                           page_data=tutorial_data["examples"])
+
+# new example pages
+@app.route("/examples/example1")
+def example1():
+    return render_template("example1.html", img="example1.jpg",
+                           title="Align the Subject With Lines or Intersections")
+
+@app.route("/examples/example2")
+def example2():
+    return render_template("example2.html", img="example2.jpg",
+                           title="Align the Linear Elements With Grid Lines")
+
+@app.route("/examples/example3")
+def example3():
+    return render_template("example3.html", img="example3.jpg",
+                           title="Align Objects Diagonally")
+
+@app.route("/examples/example4")
+def example4():
+    return render_template("example4.html", img="example4.jpg",
+                           title="Break the Rule of Thirds")
 
 @app.route("/quiz")
 def quiz():

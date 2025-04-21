@@ -1,0 +1,36 @@
+{% extends "layout.html" %} {% block body %}
+<div class="container content-section example4-page">
+  <h3 class="text-center" style="margin-bottom: 2rem">
+    Break the Rule of Thirds
+  </h3>
+
+  <div class="content-with-image">
+    <!-- two images stacked -->
+    <div class="media-col" style="gap: 1rem">
+      <img
+        src="{{ url_for('static', filename='images/example4.jpg') }}"
+        class="image-example grid-example"
+        alt="Example 4 standard grid"
+      />
+      <img
+        src="{{ url_for('static', filename='images/example4.2.jpg') }}"
+        class="image-example grid-example"
+        alt="Example 4 broken thirds"
+      />
+    </div>
+
+    <div class="media-col">
+      <p class="content-text" style="font-style: italic">
+        Yes, you read that right—and no, we’re not sabotaging our piece on how
+        to use this rule at all! In this image, the buildings and their
+        reflection form one unit, making a strict thirds‑based layout tricky to
+        implement.
+      </p>
+    </div>
+  </div>
+
+  <div style="text-align: right; margin-top: 3rem">
+    <a href="{{ url_for('examples') }}" class="btn-next">BACK</a>
+  </div>
+</div>
+{% endblock %}
