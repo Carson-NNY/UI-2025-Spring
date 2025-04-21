@@ -1,0 +1,62 @@
+{% extends "layout.html" %} {% block body %}
+<div class="quiz-container quiz5-container">
+    <!-- Quiz Header -->
+    <div class="quiz-header">
+        <h2 class="quiz-section-title">Quiz – Rule of Third examples:</h2>
+        <p class="quiz-prompt">Drag and drop these photos to each guideline of the rule of thirds (one per box).</p>
+    </div>
+
+    <div class="quiz5-layout">
+        <!-- Left Side: Draggable Photos -->
+        <div class="draggable-photos">
+            <img src="{{ url_for('static', filename='images/quiz5 1.jpg') }}" 
+                 class="draggable-photo" draggable="true" data-photo-id="1"
+                 alt="Rule of thirds example 1">
+            <img src="{{ url_for('static', filename='images/quiz5 2.jpg') }}" 
+                 class="draggable-photo" draggable="true" data-photo-id="2"
+                 alt="Rule of thirds example 2">
+            <img src="{{ url_for('static', filename='images/quiz5 3.jpg') }}" 
+                 class="draggable-photo" draggable="true" data-photo-id="3"
+                 alt="Rule of thirds example 3">
+            <img src="{{ url_for('static', filename='images/quiz5 4.jpg') }}" 
+                 class="draggable-photo" draggable="true" data-photo-id="4"
+                 alt="Rule of thirds example 4">
+        </div>
+
+        <!-- Right Side: Drop Zones -->
+        <div class="drop-zones">
+            <div class="drop-zone-row">
+                <div class="drop-zone" data-zone="1">
+                    <div class="zone-label">Align the Subject With Lines or Intersections</div>
+                    <div class="zone-content"></div>
+                </div>
+                <div class="drop-zone" data-zone="2">
+                    <div class="zone-label">Align the Linear Elements With Grid Lines</div>
+                    <div class="zone-content"></div>
+                </div>
+            </div>
+            <div class="drop-zone-row">
+                <div class="drop-zone" data-zone="3">
+                    <div class="zone-label">Align Objects Diagonally</div>
+                    <div class="zone-content"></div>
+                </div>
+                <div class="drop-zone" data-zone="4">
+                    <div class="zone-label">Break the Rule of Thirds</div>
+                    <div class="zone-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="quiz-actions">
+        <button id="review-btn" class="btn-quiz">Stuck? Click to Review</button>
+        <a href="{{ url_for('quiz_result') }}" id="next-btn" class="btn-quiz" disabled>NEXT</a>
+    </div>
+
+    <!-- Review Tip Popup (hidden by default) -->
+    <div id="review-tip" class="review-tip" style="display: none;">
+        <p>Imagine overlaying a 3×3 grid on each photo—place the image where its main element sits on a line, an intersection, diagonally across, or purposely off-grid to break the rule.</p>
+    </div>
+</div>
+{% endblock %} 
