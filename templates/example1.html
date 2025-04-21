@@ -1,30 +1,45 @@
 {% extends "layout.html" %} {% block body %}
 <div class="container content-section">
   <div class="example-layout">
-    <!-- LEFT COLUMN: image then caption -->
+    <!-- LEFT COLUMN -->
     <div class="example-left">
-      <img
-        src="{{ url_for('static', filename='images/example1.jpg') }}"
-        class="image-example grid-example"
-        alt="Example 1 grid overlay"
-      />
+      <div class="hover-container">
+        <img
+          src="{{ url_for('static', filename='images/example1.jpg') }}"
+          class="image-example grid-example"
+          alt="Example 1 grid overlay"
+        />
+        <div class="overlay">
+          <span class="star"></span>
+        </div>
+      </div>
+
       <p class="content-text example-desc">
         Focus on the four intersections that the grid lines form and align your
         subject with one of these.
       </p>
     </div>
 
-    <!-- RIGHT COLUMN: title, image, then back button -->
+    <!-- RIGHT COLUMN -->
     <div class="example-right">
       <h3 class="example-title">
         Align the Subject With Lines or Intersections
       </h3>
-      <img
-        src="{{ url_for('static', filename='images/example1.2.jpg') }}"
-        class="image-example grid-example"
-        alt="Example 1 subject alignment"
-      />
-      <a href="{{ url_for('examples') }}" class="btn-next example-back">BACK</a>
+
+      <div class="hover-container">
+        <img
+          src="{{ url_for('static', filename='images/example1.2.jpg') }}"
+          class="image-example grid-example"
+          alt="Example 1 subject alignment"
+        />
+        <div class="overlay">
+          <span class="star"></span>
+        </div>
+      </div>
+
+      <a href="{{ url_for('examples') }}" class="btn-next example-back">
+        BACK
+      </a>
     </div>
   </div>
 </div>
