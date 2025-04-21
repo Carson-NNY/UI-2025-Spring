@@ -5,19 +5,28 @@
   </h3>
 
   <div class="content-with-image">
+    <!-- FIRST IMAGE: two red lines on hover -->
     <div class="media-col">
-      <img
-        src="{{ url_for('static', filename='images/example2.jpg') }}"
-        class="image-example grid-example"
-        alt="Example 2 grid overlay"
-      />
+      <div class="hover-container hover-ex2-1">
+        <img
+          src="{{ url_for('static', filename='images/example2.jpg') }}"
+          class="image-example grid-example"
+          alt="Example 2 grid overlay"
+        />
+        <div class="overlay"></div>
+      </div>
     </div>
+
+    <!-- SECOND IMAGE: two different red lines on hover -->
     <div class="media-col">
-      <img
-        src="{{ url_for('static', filename='images/example2.2.jpg') }}"
-        class="image-example grid-example"
-        alt="Example 2 horizon alignment"
-      />
+      <div class="hover-container hover-ex2-2">
+        <img
+          src="{{ url_for('static', filename='images/example2.2.jpg') }}"
+          class="image-example grid-example"
+          alt="Example 2 horizon alignment"
+        />
+        <div class="overlay"></div>
+      </div>
     </div>
   </div>
 
