@@ -22,6 +22,7 @@
 body {
   background: url('/static/images/main_bg.png') no-repeat center center fixed;
   background-size: cover;
+  color: white;
 }
 
 /* Main content styles */
