@@ -1,13 +1,13 @@
 // Correct answers for each quiz
 const CORRECT_ANSWERS = {
     quiz1: 'B', // To create balanced and eye-catching compositions...
-    quiz2: 'B', // Align the Linear Elements With Grid Lines
+    quiz2: 'C', // Align the Linear Elements With Grid Lines
     quiz3: 'A', // Align the Subject With Lines or Intersections
     quiz4: 'B', // Align the Linear Elements With Grid Lines
     quiz5: {
         // Each drop zone's correct photo ID
-        '1': '3', // Align the Subject With Lines or Intersections -> photo 3
-        '2': '1', // Align the Linear Elements With Grid Lines -> photo 1
+        '1': '2', // Align the Subject With Lines or Intersections -> photo 2
+        '2': '3', // Align the Linear Elements With Grid Lines -> photo 1
         '3': '4', // Align Objects Diagonally -> photo 4
         '4': '2'  // Break the Rule of Thirds -> photo 2
     }
