@@ -1,6 +1,11 @@
 /* Navbar Styling */
+.navbar {
+  background-color: #000;
+  padding: 1rem;
+}
+
 .nav_item {
-  color: black;
+  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 400;
