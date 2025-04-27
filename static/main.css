@@ -20,7 +20,7 @@
 }
 
 body {
-  background: url('/static/images/main_bg.png') no-repeat center center fixed;
+  background: url("/static/images/main_bg.png") no-repeat center center fixed;
   background-size: cover;
   color: white;
 }
@@ -286,12 +286,6 @@ h1 {
   border-left-color: rgba(0, 0, 0, 0.6);
 }
 
-/* Grid of four examples */
-.examples-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
 .example-item {
   text-align: center;
   color: white;
@@ -364,8 +358,9 @@ h1 {
 /* ── Proportional, larger examples grid ── */
 .examples-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  row-gap: 2.5rem;
+  column-gap: 2rem;
 }
 
 /* use native aspect‑ratio instead of fixed height */

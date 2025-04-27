@@ -36,8 +36,12 @@
     </div>
   </div>
 
-  <div style="text-align: right; margin-top: 3rem">
-    <a href="{{ url_for('examples') }}" class="btn-next">BACK</a>
+  <div
+    class="example-nav"
+    style="display: flex; justify-content: space-between; margin-top: 3rem"
+  >
+    <a href="{{ url_for('example2') }}" class="btn-next">PREVIOUS</a>
+    <a href="{{ url_for('example4') }}" class="btn-next">NEXT</a>
   </div>
 </div>
 {% endblock %}

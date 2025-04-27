@@ -35,8 +35,13 @@
     grid line— this brings more focus to the sky.
   </p>
 
-  <div style="text-align: right; margin-top: 3rem">
-    <a href="{{ url_for('examples') }}" class="btn-next">BACK</a>
+  <!-- navigation buttons -->
+  <div
+    class="example-nav"
+    style="display: flex; justify-content: space-between; margin-top: 3rem"
+  >
+    <a href="{{ url_for('example1') }}" class="btn-next">PREVIOUS</a>
+    <a href="{{ url_for('example3') }}" class="btn-next">NEXT</a>
   </div>
 </div>
 {% endblock %}
