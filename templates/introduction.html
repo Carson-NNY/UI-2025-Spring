@@ -1,18 +1,24 @@
-{% extends "layout.html" %} {% block body %}
+{% extends "layout.html" %}
+{% block body %}
 <div class="content-section">
-  {% for section in page_data.sections %}
-  <p class="content-text">
-    {% if section.has_drop_cap %}
-    <span style="font-size: 4rem; line-height: 0.8"
-      >{{ section.content[:1] }}</span
-    >{{ section.content[1:] }} {% else %} {{ section.content }} {% endif %}
-  </p>
-  {% endfor %}
-
-  <div class="text-center">
-    <a href="{{ url_for(page_data.next_button.link) }}" class="btn-next">
-      {{ page_data.next_button.text }}
-    </a>
+  <div class="content-with-image">
+    <!-- left column: content paragraphs -->
+    <div class="text-col">
+      {% for section in page_data.sections %}
+      <p class="content-text">{{ section.content }}</p>
+      {% endfor %}
+    </div>
+    <!-- right column: image + Next button -->
+    <div class="media-col">
+      <img
+        src="{{ url_for('static', filename=page_data.image.src) }}"
+        alt="{{ page_data.image.alt }}"
+        class="{{ page_data.image.class }}"
+      />
+      <a href="{{ url_for(page_data.next_button.link) }}" class="btn-next">
+        {{ page_data.next_button.text }}
+      </a>
+    </div>
   </div>
 </div>
 {% endblock %}
