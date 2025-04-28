@@ -10,28 +10,14 @@ app = Flask(__name__)
 tutorial_data = {
     "home": {
         "title": "Master the Rule of Thirds in 10 Minutes!",
+        "intro_lines": [
+            "Do you ever look at a photo and wonder why it's so pleasing to the eye?",
+            "Often, you'll find that the photographer used the rule of thirds."
+        ],
         "button_text": "Start Lesson",
         "button_link": "introduction"
     }, 
     "introduction": {
-        "sections": [
-            {
-                "id": "intro_1",
-                "content": "Do you ever look at a photo and wonder why it's so pleasing to the eye? Often, you'll find that the photographer used the rule of thirds.",
-                "has_drop_cap": True
-            },
-            {
-                "id": "intro_2",
-                "content": "This compositional technique is one of the most important fundamentals of photography — and, bonus, it's also one of the easiest to learn and apply. Keep reading to find out how the rule of thirds can help you take better photos.",
-                "has_drop_cap": False
-            }
-        ],
-        "next_button": {
-            "text": "NEXT: What is the rule of thirds?",
-            "link": "introduction_part2"
-        }
-    },
-    "introduction_part2": {
         "sections": [
             {
                 "id": "intro_part2_1",
@@ -113,12 +99,6 @@ def introduction():
     return render_template("introduction.html", page_data=tutorial_data["introduction"])
 
 
-@app.route("/introduction/part2")
-def introduction_part2():
-    """Render the second part of the Introduction page."""
-    return render_template("introduction_part2.html", page_data=tutorial_data["introduction_part2"])
-
-
 @app.route("/preparation")
 def preparation():
     """Render the Preparation page."""
@@ -187,5 +167,3 @@ def quiz_result():
 # -------------------------------------------------
 if __name__ == "__main__":
     app.run(debug=True)
-
-
