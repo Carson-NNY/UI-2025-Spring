@@ -1,10 +1,25 @@
-{% extends "layout.html" %} {% block body %}
+{% extends "layout.html" %}
+{% block body %}
 <div class="hero-section">
   <h1 class="hero-title">{{ page_data.title }}</h1>
-  <a
-    href="{{ url_for(page_data.button_link) }}"
-    class="btn-action btn-action-home"
-  >
+
+  {# two-line intro with a drop-cap on the first line #}
+  {% for line in page_data.intro_lines %}
+    {% if loop.first %}
+      <p class="content-text" style="margin-bottom: 0; line-height: 1.1;">
+        <span style="font-size: 4rem; line-height: 1; vertical-align: middle;">
+          {{ line[:1] }}
+        </span>{{ line[1:] }}
+      </p>
+    {% else %}
+      <p class="content-text" style="margin-top: 0; line-height: 1.1;">
+        {{ line }}
+      </p>
+    {% endif %}
+  {% endfor %}
+
+  <a href="{{ url_for(page_data.button_link) }}"
+     class="btn-action btn-action-home">
     {{ page_data.button_text }}
   </a>
 </div>
