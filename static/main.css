@@ -19,6 +19,11 @@
   text-decoration: none;
 }
 
+.subtitle_color {
+  color: #c9ed16;
+  margin-bottom: 2rem;
+}
+
 body {
   background: linear-gradient(to bottom, #1d3557, #4a2b7b);
   color: white;

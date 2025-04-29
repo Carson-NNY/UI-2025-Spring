@@ -1,9 +1,9 @@
-{% extends "layout.html" %}
-{% block body %}
+{% extends "layout.html" %} {% block body %}
 <div class="content-section">
   <div class="content-with-image">
     <!-- left column: content paragraphs -->
     <div class="text-col">
+      <h2 class="subtitle_color">Creating Balance with the Rule of Thirds</h2>
       {% for section in page_data.sections %}
       <p class="content-text">{{ section.content }}</p>
       {% endfor %}
