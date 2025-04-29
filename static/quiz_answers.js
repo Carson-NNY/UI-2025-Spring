@@ -66,8 +66,62 @@ function calculateScore() {
     }
 }
 
-// Initialize quiz page handlers
+// Quiz progress tracking
+const QUIZ_COUNT = {
+    quiz: 1,
+    quiz2: 2,
+    quiz3: 3,
+    quiz4: 4,
+    quiz5: 5
+};
+
+const TOTAL_QUIZZES = 5;
+
+// Initialize quiz progress counter
+function initializeQuizProgress() {
+    const currentPath = window.location.pathname;
+    const currentQuiz = currentPath.split('/').pop();
+    const currentQuizNumber = QUIZ_COUNT[currentQuiz] || 1;
+
+    // Create progress counter if it doesn't exist
+    if (!document.querySelector('.quiz-progress')) {
+        const progressDiv = document.createElement('div');
+        progressDiv.className = 'quiz-progress';
+        progressDiv.innerHTML = `
+            <span class="current">${currentQuizNumber}</span>
+            <span class="separator">/</span>
+            <span class="total">${TOTAL_QUIZZES}</span>
+        `;
+        
+        // Find the quiz header and insert the progress counter
+        const quizHeader = document.querySelector('.quiz-header');
+        if (quizHeader) {
+            // Create a wrapper for the header content if it doesn't exist
+            if (!quizHeader.querySelector('.quiz-header-content')) {
+                const headerContent = document.createElement('div');
+                headerContent.className = 'quiz-header-content';
+                while (quizHeader.firstChild) {
+                    headerContent.appendChild(quizHeader.firstChild);
+                }
+                quizHeader.appendChild(headerContent);
+            }
+            quizHeader.appendChild(progressDiv);
+        }
+    } else {
+        // Update existing progress counter
+        const progressDiv = document.querySelector('.quiz-progress');
+        progressDiv.innerHTML = `
+            <span class="current">${currentQuizNumber}</span>
+            <span class="separator">/</span>
+            <span class="total">${TOTAL_QUIZZES}</span>
+        `;
+    }
+}
+
+// Initialize quiz progress when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    initializeQuizProgress();
+    
     // For quiz pages 1-4
     const answerPanels = document.querySelectorAll('.answer-panel');
     if (answerPanels.length > 0) {
