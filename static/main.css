@@ -20,9 +20,12 @@
 }
 
 body {
-  background: url("/static/images/main_bg.png") no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(to bottom, #1d3557, #4a2b7b);
   color: white;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
 }
 
 /* Main content styles */
