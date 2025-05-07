@@ -434,7 +434,7 @@ h1 {
 
 /* only the left-hand image in example1 */
 .example1-page .content-with-image .media-col:first-child img {
-  max-width: 350px;
+  max-width: 600px;
   height: 350px;
   object-fit: cover;
 }
@@ -540,10 +540,10 @@ h1 {
   gap: rem;
 }
 
-.example2-page .content-with-image .media-col {
+.example2-page .content-with-image .media-col img {
   max-width: none;
-  width: 100%;
-  height: auto;
+  width: 450px;
+  height: 300px;
 }
 
 /* Module 1: full‑width line at 30% down */
@@ -578,6 +578,12 @@ h1 {
   display: none;
 }
 
+.example3-page .content-with-image .media-col img {
+  max-width: none;
+  width: 450px;
+  height: 300px;
+}
+
 /* ── example3 Module 1: single 45° line on first image ── */
 .hover-ex3-1 .overlay {
   position: absolute;
@@ -595,12 +601,12 @@ h1 {
 .hover-ex3-1 .overlay::before {
   content: "";
   position: absolute;
-  width: 123%;
+  width: 120%;
   height: 3px;
   background: red;
   top: 50%;
   left: -11%;
-  transform: rotate(-36.5deg);
+  transform: rotate(-34deg);
   transform-origin: center;
 }
 .hover-ex3-1 .overlay::after {
@@ -624,7 +630,7 @@ h1 {
 .hover-ex3-2 .overlay::before {
   content: "";
   position: absolute;
-  width: 120%;
+  width: 119%;
   height: 3px;
   background: red;
   top: 50%;
@@ -644,7 +650,7 @@ h1 {
 }
 
 .example4-page .content-with-image .media-col:last-child img {
-  max-width: 350px;
+  max-width: 500px;
   height: 350px;
   object-fit: cover;
 }
