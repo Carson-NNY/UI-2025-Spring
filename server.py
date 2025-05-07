@@ -45,13 +45,8 @@ tutorial_data = {
             {
                 "id": "prep_step_1",
                 "title": "1. Use your brain",
-                "content": "Mentally divide your image into thirds, both horizontally and vertically, and place your subject accordingly."
+                "content": "Mentally divide your image into thirds, both horizontally and vertically, and place your subject accordingly. Here shows how you can use the grid on your phone:"
             },
-            {
-                "id": "prep_step_2",
-                "title": "2. Use the grid on your camera/phone viewfinder",
-                "content": "Most cameras have a grid overlay that you can use to compose your images using the rule of thirds. Easy peasy."
-            }
         ],
         # "videos": [
         #     {
