@@ -4,11 +4,9 @@
     <!-- left column: steps -->
     <div class="prep-text-col">
       {% for step in page_data.steps %}
-      <p class="content-text-preparation">{{ step.title }}</p>
+      <p class="prep-step-title">{{ step.title }}</p>
       <p class="content-text-preparation">
-        {% if "thirds" in step.content %} Mentally divide your image into
-        <strong>thirds</strong>, both horizontally and vertically, and place
-        your subject accordingly. {% else %} {{ step.content }} {% endif %}
+        {{ step.content }}
       </p>
       {% endfor %}
 

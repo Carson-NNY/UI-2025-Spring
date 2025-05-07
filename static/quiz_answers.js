@@ -9,7 +9,7 @@ const CORRECT_ANSWERS = {
         '1': '2', // Align the Subject With Lines or Intersections -> photo 2
         '2': '3', // Align the Linear Elements With Grid Lines -> photo 1
         '3': '4', // Align Objects Diagonally -> photo 4
-        '4': '2'  // Break the Rule of Thirds -> photo 2
+        '4': '1'  // Break the Rule of Thirds -> photo 2
     }
 };
 
