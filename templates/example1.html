@@ -1,46 +1,47 @@
 {% extends "layout.html" %} {% block body %}
-<div class="container content-section">
-  <div class="example-layout">
-    <!-- LEFT COLUMN -->
-    <div class="example-left">
+<div class="container content-section example1-page">
+  <!-- Title -->
+  <h3 class="text-center" style="margin-bottom: 2rem">
+    Align the Subject With Lines or Intersections
+  </h3>
+
+  <!-- Two images side by side -->
+  <div class="content-with-image">
+    <div class="media-col">
       <div class="hover-container">
         <img
           src="{{ url_for('static', filename='images/example1.jpg') }}"
           class="image-example grid-example"
           alt="Example 1 grid overlay"
         />
-        <div class="overlay">
-          <span class="star"></span>
-        </div>
+        <div class="overlay"><span class="star"></span></div>
       </div>
-
-      <p class="content-text example-desc">
-        Focus on the four intersections that the grid lines form and align your
-        subject with one of these.
-      </p>
     </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="example-right">
-      <h3 class="example-title">
-        Align the Subject With Lines or Intersections
-      </h3>
-
+    <div class="media-col">
       <div class="hover-container hover-right">
         <img
           src="{{ url_for('static', filename='images/example1.2.jpg') }}"
           class="image-example grid-example"
           alt="Example 1 subject alignment"
         />
-        <div class="overlay">
-          <span class="star"></span>
-        </div>
-      </div>
-
-      <div style="text-align: right; margin-top: 3rem">
-        <a href="{{ url_for('example2') }}" class="btn-next">NEXT</a>
+        <div class="overlay"><span class="star"></span></div>
       </div>
     </div>
+  </div>
+
+  <!-- Explanation below images -->
+  <p class="content-text" style="margin-top: 2rem">
+    Focus on the <strong>four intersections</strong> that the grid lines form
+    and align your subject with one of these.
+  </p>
+
+  <!-- Nav buttons -->
+  <div
+    class="example-nav"
+    style="display: flex; justify-content: space-between; margin-top: 3rem"
+  >
+    <a href="{{ url_for('examples') }}" class="btn-next">PREVIOUS</a>
+    <a href="{{ url_for('example2') }}" class="btn-next">NEXT</a>
   </div>
 </div>
 {% endblock %}
