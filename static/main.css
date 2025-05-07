@@ -44,7 +44,7 @@ h1 {
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 2rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 /* Hero section for home page */
@@ -60,13 +60,12 @@ h1 {
 .hero-title {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 3.5rem;
-  margin-bottom: 12rem;
+  font-size: 5rem;
+  margin-bottom: 3rem;
 }
 
 /* Button styles */
 .btn-action {
-  background-color: transparent;
   color: white;
   border: 2px solid white;
   padding: 1rem 3rem;
@@ -109,7 +108,7 @@ h1 {
 }
 
 .content-text-preparation {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -433,6 +432,21 @@ h1 {
   margin-right: -100px;
 }
 
+/* only the left-hand image in example1 */
+.example1-page .content-with-image .media-col:first-child img {
+  max-width: none;
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.example1-page .content-with-image .media-col:last-child img {
+  max-width: none;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
 /* ── Hover grid + star overlay ── */
 .hover-container {
   position: relative;
@@ -460,10 +474,10 @@ h1 {
 .hover-container .overlay::before {
   content: "";
   position: absolute;
-  top: 49.3%;
+  top: 33.1%;
   left: 0;
-  width: 77%;
-  height: 2px;
+  width: 100%;
+  height: 4px;
   background: red;
 }
 
@@ -471,10 +485,10 @@ h1 {
 .hover-container .overlay::after {
   content: "";
   position: absolute;
-  left: 51%;
-  top: 24%;
-  width: 2px;
-  height: 76%;
+  left: 66.5%;
+  top: 0%;
+  width: 4px;
+  height: 100%;
   background: red;
 }
 
@@ -485,8 +499,8 @@ h1 {
   height: 24px;
   background: yellow;
   border-radius: 50%;
-  left: 51.2%;
-  top: 49.3%;
+  left: 66.8%;
+  top: 33.1%;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -497,7 +511,7 @@ h1 {
   position: absolute;
   top: 75%;
   left: 0%;
-  width: 77%;
+  width: 100%;
   height: 3px;
   background: red;
 }
@@ -505,7 +519,7 @@ h1 {
 .hover-right .overlay::after {
   content: "";
   position: absolute;
-  left: 55%;
+  left: 70%;
   top: 0%;
   width: 3px;
   height: 100%;
@@ -513,7 +527,7 @@ h1 {
 }
 
 .hover-right .overlay .star {
-  left: 55.4%;
+  left: 70%;
   top: 75%;
   width: 28px;
   height: 28px;
@@ -529,14 +543,9 @@ h1 {
 }
 
 .example2-page .content-with-image .media-col {
-  flex: 1;
-  max-width: 2000px;
-}
-
-.example2-page .content-with-image .media-col img {
+  max-width: none;
   width: 100%;
   height: auto;
-  object-fit: cover;
 }
 
 /* Module 1: full‑width line at 30% down */
@@ -630,10 +639,65 @@ h1 {
 }
 
 /* ── example4: shrink only the first image ── */
-.example4-page .content-with-image .media-col img:first-child {
-  height: 300px;
-  object-fit: cover;
+.example4-page .content-with-image .media-col:first-child img {
+  max-width: none;
+  width: 400px;
+  height: 400px;
+}
+
+.example4-page .content-with-image .media-col:last-child img {
+  max-width: none;
+  height: 400px;
   width: 100%;
+}
+
+/* only on example4 page */
+.example4-page .btn-quiz-large {
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  background-color: white;
+  color: #4a2b7b; /* or whatever dark accent you like */
+  border: none; /* remove the old white border if you want a clean block */
+  border-radius: 50px;
+}
+
+/* hide by default */
+.example4-page .hover-container .overlay {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* show on hover */
+.example4-page .hover-container:hover .overlay {
+  opacity: 1;
+}
+
+/* example4: one horizontal line on first image */
+.example4-page .hover-ex4-1 .overlay::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: red;
+}
+.example4-page .hover-ex4-1 .overlay::after {
+  display: none;
+}
+
+/* example4: one vertical line on second image */
+.example4-page .hover-ex4-2 .overlay::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: red;
+}
+.example4-page .hover-ex4-2 .overlay::after {
+  display: none;
 }
 
 /* Quiz Page Styles */
@@ -1325,4 +1389,23 @@ nav::before {
   font-weight: 700;
   margin-bottom: 1rem;
   color: #c9ed16;
+.grid_phone {
+  width: 33rem;
+  border-radius: 15px;
+}
+
+.prep-titles {
+  color: #c9ed16;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-next,
+.btn-action {
+  background-color: #afa3c3;
+  font-size: 1.4rem;
+}
+
+.btn-quiz-next {
+  font-size: 1.5rem !important;
 }

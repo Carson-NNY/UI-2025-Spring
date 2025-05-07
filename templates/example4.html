@@ -1,38 +1,52 @@
-{% extends "layout.html" %}
-{% block body %}
+{# templates/example4.html #} {% extends "layout.html" %} {% block body %}
 <div class="container content-section example4-page">
   <h3 class="text-center" style="margin-bottom: 2rem; font-weight: 700">
     Break the Rule of Thirds
   </h3>
 
+  <!-- Two images side by side -->
   <div class="content-with-image">
-    <!-- two images stacked -->
-    <div class="media-col" style="gap: 1rem">
-      <img
-        src="{{ url_for('static', filename='images/example4.jpg') }}"
-        class="image-example grid-example"
-        alt="Example 4 standard grid"
-      />
-      <img
-        src="{{ url_for('static', filename='images/example4.2.jpg') }}"
-        class="image-example grid-example"
-        alt="Example 4 broken thirds"
-      />
-    </div>
-
     <div class="media-col">
-      <p class="content-text">
-        Yes, you read that right—and no, we're not sabotaging our piece on how
-        to use this rule at all! In this image, the buildings and their
-        reflection form one unit, making a strict thirds‑based layout tricky to
-        implement.
-      </p>
+      <div class="hover-container hover-ex4-1">
+        <img
+          src="{{ url_for('static', filename='images/example4.jpg') }}"
+          class="image-example grid-example"
+          alt="Example 4 standard grid"
+        />
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <div class="media-col">
+      <div class="hover-container hover-ex4-2">
+        <img
+          src="{{ url_for('static', filename='images/example4.2.jpg') }}"
+          class="image-example grid-example"
+          alt="Example 4 broken thirds"
+        />
+        <div class="overlay"></div>
+      </div>
     </div>
   </div>
 
-  <div class="example-nav" style="display: flex; justify-content: space-between; margin-top: 3rem">
-    <a href="{{ url_for('examples') }}" class="btn-next">Review More?</a>
-    <a href="{{ url_for('quiz') }}" class="btn-next" style="font-weight: 700; background-color: rgba(255, 255, 255, 0.2);">Quiz</a>
+  <!-- Explanation below images -->
+  <p class="content-text" style="margin-top: 2rem">
+    In these images, the building and the reflection castle in the lake shows
+    <strong>symmetric</strong>, making a strict thirds‑based layout tricky to
+    implement. For images with <strong>Perfect Symmetry</strong>,
+    <strong>Strong Leading Lines Toward Center</strong>,
+    <strong>Radial or Circular Motion</strong>, are not required to use Rule of
+    Thirds.
+  </p>
+
+  <!-- Nav buttons -->
+  <div
+    class="example-nav"
+    style="display: flex; justify-content: space-between; margin-top: 3rem"
+  >
+    <a href="{{ url_for('examples') }}" class="btn-next">REVIEW MORE</a>
+    <a href="{{ url_for('quiz') }}" class="btn-next btn-quiz-large"
+      >Ready for a Quiz?</a
+    >
   </div>
 </div>
 {% endblock %}

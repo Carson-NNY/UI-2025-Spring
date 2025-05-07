@@ -4,9 +4,9 @@
     Align Objects Diagonally
   </h3>
 
+  <!-- Two images side by side -->
   <div class="content-with-image">
-    <!-- two images stacked -->
-    <div class="media-col" style="gap: 1rem">
+    <div class="media-col">
       <div class="hover-container hover-ex3-1">
         <img
           src="{{ url_for('static', filename='images/example3.jpg') }}"
@@ -15,7 +15,8 @@
         />
         <div class="overlay"></div>
       </div>
-
+    </div>
+    <div class="media-col">
       <div class="hover-container hover-ex3-2">
         <img
           src="{{ url_for('static', filename='images/example3.2.jpg') }}"
@@ -35,6 +36,14 @@
     </div>
   </div>
 
+  <!-- Explanation below images -->
+  <p class="content-text" style="margin-top: 2rem">
+    Consider aligning subjects <strong>diagonally</strong>, instead of
+    horizontally or vertically—for example, this winding river makes for a more
+    <strong>dynamic composition</strong> when it diagonally splits the image.
+  </p>
+
+  <!-- Nav buttons -->
   <div
     class="example-nav"
     style="display: flex; justify-content: space-between; margin-top: 3rem"

@@ -1,50 +1,64 @@
 {% extends "layout.html" %} {% block body %}
 <div class="quiz-container quiz2-container">
-    <!-- Quiz Header -->
-    <div class="quiz-header">
-        <h2 class="quiz-section-title">Quiz – Rule of Third examples:</h2>
-        <p class="quiz-prompt">What guideline does this photo follow the rule of thirds?</p>
+  <!-- Quiz Header -->
+  <div class="quiz-header">
+    <h2 class="quiz-section-title">Quiz – Rule of Third examples:</h2>
+    <p class="quiz-prompt">
+      What guideline does this photo follow the rule of thirds?
+    </p>
+  </div>
+
+  <!-- Two-Column Layout -->
+  <div class="quiz2-layout">
+    <!-- Left Column: Answer Options -->
+    <div class="quiz2-answers">
+      <div class="answer-panel vertical" data-choice="A">
+        <span class="answer-label">A.</span>
+        <span class="answer-text"
+          >Align the Subject With Lines or Intersections</span
+        >
+      </div>
+      <div class="answer-panel vertical" data-choice="B">
+        <span class="answer-label">B.</span>
+        <span class="answer-text"
+          >Align the Linear Elements With Grid Lines</span
+        >
+      </div>
+      <div class="answer-panel vertical" data-choice="C">
+        <span class="answer-label">C.</span>
+        <span class="answer-text">Align Objects Diagonally</span>
+      </div>
+      <div class="answer-panel vertical" data-choice="D">
+        <span class="answer-label">D.</span>
+        <span class="answer-text">Break the Rule of Thirds</span>
+      </div>
     </div>
 
-    <!-- Two-Column Layout -->
-    <div class="quiz2-layout">
-        <!-- Left Column: Answer Options -->
-        <div class="quiz2-answers">
-            <div class="answer-panel vertical" data-choice="A">
-                <span class="answer-label">A.</span>
-                <span class="answer-text">Align the Subject With Lines or Intersections</span>
-            </div>
-            <div class="answer-panel vertical" data-choice="B">
-                <span class="answer-label">B.</span>
-                <span class="answer-text">Align the Linear Elements With Grid Lines</span>
-            </div>
-            <div class="answer-panel vertical" data-choice="C">
-                <span class="answer-label">C.</span>
-                <span class="answer-text">Align Objects Diagonally</span>
-            </div>
-            <div class="answer-panel vertical" data-choice="D">
-                <span class="answer-label">D.</span>
-                <span class="answer-text">Break the Rule of Thirds</span>
-            </div>
-        </div>
-
-        <!-- Right Column: Example Photo -->
-        <div class="quiz2-image">
-            <img src="{{ url_for('static', filename='images/quiz4.jpg') }}" 
-                 alt="Sunset seascape with birds flying across colorful sky" 
-                 class="example-photo">
-        </div>
+    <!-- Right Column: Example Photo -->
+    <div class="quiz2-image">
+      <img
+        src="{{ url_for('static', filename='images/quiz4.jpg') }}"
+        alt="Sunset seascape with birds flying across colorful sky"
+        class="example-photo"
+      />
     </div>
+  </div>
 
-    <!-- Action Buttons -->
-    <div class="quiz-actions">
-        <button id="review-btn" class="btn-quiz">Stuck? Click to Review</button>
-        <a href="{{ url_for('quiz5') }}" id="next-btn" class="btn-quiz" disabled>NEXT</a>
-    </div>
+  <!-- Action Buttons -->
+  <div class="quiz-actions">
+    <button id="review-btn" class="btn-quiz">Stuck? Click to Review</button>
+    <a
+      href="{{ url_for('quiz5') }}"
+      id="next-btn"
+      class="btn-quiz btn-quiz-next"
+      disabled
+      >NEXT</a
+    >
+  </div>
 
     <!-- Review Tip Popup (hidden by default) -->
     <div id="review-tip" class="review-tip" style="display: none;">
         <p>Which <strong>horizontal line</strong> (top, middle, or bottom third) does the horizon align with?</p>
     </div>
 </div>
-{% endblock %} 
+{% endblock %}
