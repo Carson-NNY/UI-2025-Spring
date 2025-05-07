@@ -130,7 +130,7 @@ h1 {
 /* remove any left‑margin hack on your image */
 .image-example {
   margin: 0;
-  max-width: 400px;
+  max-width: 350px;
   border: 1px solid white;
   border-radius: 10px;
 }
@@ -159,7 +159,7 @@ h1 {
 
 /* Grid example */
 .grid-example {
-  max-width: 400px;
+  max-width: 350px;
 }
 
 .img-intro {
@@ -434,16 +434,14 @@ h1 {
 
 /* only the left-hand image in example1 */
 .example1-page .content-with-image .media-col:first-child img {
-  max-width: none;
-  width: 600px;
-  height: 400px;
+  max-width: 350px;
+  height: 350px;
   object-fit: cover;
 }
 
 .example1-page .content-with-image .media-col:last-child img {
-  max-width: none;
-  width: 300px;
-  height: 400px;
+  max-width: 350px;
+  height: 350px;
   object-fit: cover;
 }
 
@@ -640,15 +638,15 @@ h1 {
 
 /* ── example4: shrink only the first image ── */
 .example4-page .content-with-image .media-col:first-child img {
-  max-width: none;
-  width: 400px;
-  height: 400px;
+  max-width: 350px;
+  height: 350px;
+  object-fit: cover;
 }
 
 .example4-page .content-with-image .media-col:last-child img {
-  max-width: none;
-  height: 400px;
-  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  object-fit: cover;
 }
 
 /* only on example4 page */
@@ -1389,8 +1387,10 @@ nav::before {
   font-weight: 700;
   margin-bottom: 1rem;
   color: #c9ed16;
+}
+
 .grid_phone {
-  width: 33rem;
+  width: 28rem;
   border-radius: 15px;
 }
 
