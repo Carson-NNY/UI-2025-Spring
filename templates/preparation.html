@@ -4,7 +4,7 @@
     <!-- left column: steps -->
     <div class="prep-text-col">
       {% for step in page_data.steps %}
-      <p class="content-text-preparation">{{ step.title }}</p>
+      <p class="content-text-preparation prep-titles">{{ step.title }}</p>
       <p class="content-text-preparation">
         {% if "thirds" in step.content %} Mentally divide your image into
         <strong>thirds</strong>, both horizontally and vertically, and place
@@ -25,19 +25,11 @@
 
     <!-- right column: videos -->
     <div class="prep-video-col">
-      {% for video in page_data.videos %}
-      <div class="prep-video-item">
-        <div class="prep-video-wrapper">
-          <iframe
-            src="{{ video.src }}"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="prep-video-caption">{{ video.caption }}</div>
-      </div>
-      {% endfor %}
+      <img
+        src="{{ url_for('static', filename=page_data.image.src) }}"
+        alt="{{ page_data.image.alt }}"
+        class="{{ page_data.image.class }}"
+      />
     </div>
   </div>
 </div>

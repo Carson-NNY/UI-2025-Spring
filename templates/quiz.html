@@ -1,40 +1,61 @@
 {% extends "layout.html" %} {% block body %}
 <div class="quiz-container">
-    <!-- Quiz Header -->
-    <div class="quiz-header">
-        <h2 class="quiz-section-title">Quiz – Introduction:</h2>
-        <p class="quiz-prompt">What is the main reason photographers use the rule of thirds in their compositions?</p>
-    </div>
+  <!-- Quiz Header -->
+  <div class="quiz-header">
+    <h2 class="quiz-section-title">Quiz – Introduction:</h2>
+    <p class="quiz-prompt">
+      What is the main reason photographers use the rule of thirds in their
+      compositions?
+    </p>
+  </div>
 
-    <!-- Answer Choices -->
-    <div class="answer-grid">
-        <div class="answer-panel" data-choice="A">
-            <span class="answer-label">A.</span>
-            <span class="answer-text">To center the subject in the middle of the frame.</span>
-        </div>
-        <div class="answer-panel" data-choice="B">
-            <span class="answer-label">B.</span>
-            <span class="answer-text">To create balanced and eye-catching compositions by positioning the focal point along grid lines or their intersections.</span>
-        </div>
-        <div class="answer-panel" data-choice="C">
-            <span class="answer-label">C.</span>
-            <span class="answer-text">To divide the image into four equal parts for symmetry.</span>
-        </div>
-        <div class="answer-panel" data-choice="D">
-            <span class="answer-label">D.</span>
-            <span class="answer-text">To focus exclusively on the background details.</span>
-        </div>
+  <!-- Answer Choices -->
+  <div class="answer-grid">
+    <div class="answer-panel" data-choice="A">
+      <span class="answer-label">A.</span>
+      <span class="answer-text"
+        >To center the subject in the middle of the frame.</span
+      >
     </div>
+    <div class="answer-panel" data-choice="B">
+      <span class="answer-label">B.</span>
+      <span class="answer-text"
+        >To create balanced and eye-catching compositions by positioning the
+        focal point along grid lines or their intersections.</span
+      >
+    </div>
+    <div class="answer-panel" data-choice="C">
+      <span class="answer-label">C.</span>
+      <span class="answer-text"
+        >To divide the image into four equal parts for symmetry.</span
+      >
+    </div>
+    <div class="answer-panel" data-choice="D">
+      <span class="answer-label">D.</span>
+      <span class="answer-text"
+        >To focus exclusively on the background details.</span
+      >
+    </div>
+  </div>
 
-    <!-- Action Buttons -->
-    <div class="quiz-actions">
-        <button id="review-btn" class="btn-quiz">Stuck? Click to Review</button>
-        <a href="{{ url_for('quiz2') }}" id="next-btn" class="btn-quiz" disabled>NEXT</a>
-    </div>
+  <!-- Action Buttons -->
+  <div class="quiz-actions">
+    <button id="review-btn" class="btn-quiz">Stuck? Click to Review</button>
+    <a
+      href="{{ url_for('quiz2') }}"
+      id="next-btn"
+      class="btn-quiz btn-quiz-next"
+      disabled
+      >NEXT</a
+    >
+  </div>
 
-    <!-- Review Tip Popup (hidden by default) -->
-    <div id="review-tip" class="review-tip" style="display: none;">
-        <p>Remember: placing your subject at one of the four intersections leads to more dynamic compositions.</p>
-    </div>
+  <!-- Review Tip Popup (hidden by default) -->
+  <div id="review-tip" class="review-tip" style="display: none">
+    <p>
+      Remember: placing your subject at one of the four intersections leads to
+      more dynamic compositions.
+    </p>
+  </div>
 </div>
 {% endblock %}

@@ -53,18 +53,23 @@ tutorial_data = {
                 "content": "Most cameras have a grid overlay that you can use to compose your images using the rule of thirds. Easy peasy."
             }
         ],
-        "videos": [
-            {
-                "id": "video_1",
-                "src": "https://www.youtube.com/embed/IC2YC-ThzMg",
-                "caption": "Set grid on Camera"
-            },
-            {
-                "id": "video_2",
-                "src": "https://www.youtube.com/embed/mVvZU_w5Vr4",
-                "caption": "Set grid on iPhone"
-            }
-        ],
+        # "videos": [
+        #     {
+        #         "id": "video_1",
+        #         "src": "https://www.youtube.com/embed/IC2YC-ThzMg",
+        #         "caption": "Set grid on Camera"
+        #     },
+        #     {
+        #         "id": "video_2",
+        #         "src": "https://www.youtube.com/embed/mVvZU_w5Vr4",
+        #         "caption": "Set grid on iPhone"
+        #     }
+        # ],
+        "image": {
+            "src": "images/grid_phone.jpg",
+            "alt": "Rule of thirds example",
+            "class": "grid_phone"
+        },
         "next_button": {
             "text": "NEXT: How to apply the rule of thirds",
             "link": "examples"
