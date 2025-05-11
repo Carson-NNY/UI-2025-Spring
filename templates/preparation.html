@@ -4,10 +4,8 @@
     <!-- left column: steps -->
     <div class="prep-text-col">
       {% for step in page_data.steps %}
-      <p class="prep-step-title">{{ step.title }}</p>
-      <p class="content-text-preparation">
-        {{ step.content }}
-      </p>
+      <p class="prep-step-title" style="font-size: 2.3rem">{{ step.title }}</p>
+      <p class="content-text-preparation">{{ step.content }}</p>
       {% endfor %}
 
       <!-- next button -->
