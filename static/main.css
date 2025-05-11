@@ -7,6 +7,7 @@
   transition: all 0.2s ease;
   padding: 0.5rem 1rem;
   border-radius: 8px;
+  font-family: "Poppins", sans-serif;
 }
 
 .nav_item.active {
@@ -31,13 +32,23 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Main content styles */
 .container {
   padding: 2rem;
   max-width: 1200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
 h1 {
@@ -58,8 +69,8 @@ h1 {
 }
 
 .hero-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
   font-size: 5rem;
   margin-bottom: 3rem;
 }
@@ -1197,37 +1208,45 @@ h1 {
   }
 }
 
-/* Retake Button */
-.retake-btn {
-  align-self: flex-end;
+/* Result Actions */
+.result-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
   margin-top: 2rem;
+}
+
+.retake-btn,
+.review-btn {
   padding: 1rem 2rem;
   font-size: 1.2rem;
   transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50px;
+  background-color: transparent;
 }
 
-.retake-btn:hover {
+.retake-btn:hover,
+.review-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 991px) {
-  .result-layout {
-    flex-direction: column;
-    gap: 2rem;
+  .result-actions {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
-  .result-panel {
-    padding: 1.5rem;
-  }
-
-  .result-title {
-    font-size: 2.5rem;
-  }
-
-  .retake-btn {
-    align-self: center;
+  .retake-btn,
+  .review-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
 }
 

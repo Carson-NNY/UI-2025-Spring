@@ -1,61 +1,83 @@
 {% extends "layout.html" %} {% block body %}
 <div class="quiz-container result-container">
-    <div class="result-layout">
-        <!-- Left Side: Hero Image -->
-        <div class="result-hero">
-            <img src="{{ url_for('static', filename='images/thank_you.jpg') }}" 
-                 alt="Completion celebration image" 
-                 class="result-image">
-        </div>
-
-        <!-- Right Side: Results Panel -->
-        <div class="result-panel">
-            <h1 class="result-title">The End. Thank you!</h1>
-            
-            <div class="score-summary">
-                <h2>Your score: <span id="total-score">0</span> / 5</h2>
-            </div>
-
-            <div class="question-feedback">
-                <div class="feedback-item">
-                    <span class="question-label">Q1</span>
-                    <span class="feedback-icon" id="q1-feedback">
-                        <i class="fas fa-check correct"></i>
-                    </span>
-                    <span class="feedback-summary">Understanding why photographers use the rule of thirds for balanced compositions.</span>
-                </div>
-                <div class="feedback-item">
-                    <span class="question-label">Q2</span>
-                    <span class="feedback-icon" id="q2-feedback">
-                        <i class="fas fa-times incorrect"></i>
-                    </span>
-                    <span class="feedback-summary">Recognizing how linear elements align with grid lines for visual harmony.</span>
-                </div>
-                <div class="feedback-item">
-                    <span class="question-label">Q3</span>
-                    <span class="feedback-icon" id="q3-feedback">
-                        <i class="fas fa-check correct"></i>
-                    </span>
-                    <span class="feedback-summary">Learning how subject placement at grid intersections creates dynamic compositions.</span>
-                </div>
-                <div class="feedback-item">
-                    <span class="question-label">Q4</span>
-                    <span class="feedback-icon" id="q4-feedback">
-                        <i class="fas fa-check correct"></i>
-                    </span>
-                    <span class="feedback-summary">Exploring how diagonal elements create movement while following the rule of thirds.</span>
-                </div>
-                <div class="feedback-item">
-                    <span class="question-label">Q5</span>
-                    <span class="feedback-icon" id="q5-feedback">
-                        <i class="fas fa-times incorrect"></i>
-                    </span>
-                    <span class="feedback-summary">Applying knowledge to match photos with different rule of thirds techniques.</span>
-                </div>
-            </div>
-
-            <a href="{{ url_for('quiz') }}" class="btn-quiz retake-btn">Retake?</a>
-        </div>
+  <div class="result-layout">
+    <!-- Left Side: Hero Image -->
+    <div class="result-hero">
+      <img
+        src="{{ url_for('static', filename='images/thank_you.jpg') }}"
+        alt="Completion celebration image"
+        class="result-image"
+      />
     </div>
+
+    <!-- Right Side: Results Panel -->
+    <div class="result-panel">
+      <h1 class="result-title">The End. Thank you!</h1>
+
+      <div class="score-summary">
+        <h2>Your score: <span id="total-score">0</span> / 5</h2>
+      </div>
+
+      <div class="question-feedback">
+        <div class="feedback-item">
+          <span class="question-label">Q1</span>
+          <span class="feedback-icon" id="q1-feedback">
+            <i class="fas fa-check correct"></i>
+          </span>
+          <span class="feedback-summary"
+            >Understanding why photographers use the rule of thirds for balanced
+            compositions.</span
+          >
+        </div>
+        <div class="feedback-item">
+          <span class="question-label">Q2</span>
+          <span class="feedback-icon" id="q2-feedback">
+            <i class="fas fa-times incorrect"></i>
+          </span>
+          <span class="feedback-summary"
+            >Recognizing how linear elements align with grid lines for visual
+            harmony.</span
+          >
+        </div>
+        <div class="feedback-item">
+          <span class="question-label">Q3</span>
+          <span class="feedback-icon" id="q3-feedback">
+            <i class="fas fa-check correct"></i>
+          </span>
+          <span class="feedback-summary"
+            >Learning how subject placement at grid intersections creates
+            dynamic compositions.</span
+          >
+        </div>
+        <div class="feedback-item">
+          <span class="question-label">Q4</span>
+          <span class="feedback-icon" id="q4-feedback">
+            <i class="fas fa-check correct"></i>
+          </span>
+          <span class="feedback-summary"
+            >Exploring how diagonal elements create movement while following the
+            rule of thirds.</span
+          >
+        </div>
+        <div class="feedback-item">
+          <span class="question-label">Q5</span>
+          <span class="feedback-icon" id="q5-feedback">
+            <i class="fas fa-times incorrect"></i>
+          </span>
+          <span class="feedback-summary"
+            >Applying knowledge to match photos with different rule of thirds
+            techniques.</span
+          >
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <a href="{{ url_for('examples') }}" class="btn-quiz review-btn"
+          >Review Examples</a
+        >
+        <a href="{{ url_for('quiz') }}" class="btn-quiz retake-btn">Retake?</a>
+      </div>
+    </div>
+  </div>
 </div>
-{% endblock %} 
+{% endblock %}
