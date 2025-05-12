@@ -1,35 +1,6 @@
-# Photography Tutorial Website
+# Master the rule of thirds in 10 minutes
 
 This project is a Flask-based web application that provides a tutorial on the rule of thirds in photography.
-
-## Project Structure
-
-```
-/
-|-- server.py               # Main Flask application
-|-- requirements.txt        # Python dependencies
-|-- templates/              # HTML templates
-|   |-- home.html
-|   |-- introduction.html
-|   |-- preparation.html
-|   |-- examples.html
-|   |-- example1.html
-|   |-- example2.html
-|   |-- example3.html
-|   |-- example4.html
-|   |-- quiz.html
-|   |-- quiz2.html
-|   |-- quiz3.html
-|   |-- quiz4.html
-|   |-- quiz5.html
-|   |-- quiz_result.html
-|   |-- layout.html         # Base template (assuming it exists or will be created)
-|-- static/                 # Static files (CSS, JS, images)
-|   |-- css/
-|   |-- js/
-|   |-- images/
-|-- README.md               # This file
-```
 
 ## Setup and Installation
 
