@@ -1,6 +1,7 @@
 # Master the rule of thirds in 10 minutes
 
 This project is a Flask-based web application that provides a tutorial on the rule of thirds in photography.
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/4d5cbd4d-6fbf-4b01-afdd-336fad622d14" />
 
 ## Setup and Installation
 
